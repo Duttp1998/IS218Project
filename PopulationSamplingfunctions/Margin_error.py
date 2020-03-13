@@ -1,12 +1,11 @@
-from Statistics.Standard_Deviation import standard_deviation
-from Statistics.Z_score import z_scores
-from Calculator.Multiplication import multiplication
+from Statistics.Standarddeviation import Standarddeviation
+from Statistics.Zscore import Zscore
 
 
 class MarginError:
     @staticmethod
-    def margin(data, seed):
-        zs = z_scores(data, seed)
-        sd = standard_deviation(data)
-        margin = multiplication(zs, sd)
+    def margin(data):
+        zs = Zscore.zscore(data)
+        sd = Standarddeviation.standarddeviation(data)
+        margin = zs * sd
         return margin

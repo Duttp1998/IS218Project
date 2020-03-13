@@ -1,4 +1,4 @@
-from RandomNum.random_list import RandomList
+from Random import RandomList
 from numpy.random import seed
 
 class RandomSample():

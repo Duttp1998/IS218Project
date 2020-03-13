@@ -1,31 +1,29 @@
-from Calculator.SquareRoot import squareRoot
-from Calculator.Division import division
-from Calculator.Subtraction import subtraction
-from Statistics.Z_score import z_scores
+from Statistics.Zscore import Zscore
 from PopulationSamplingfunctions.Margin_error import MarginError
+from Statistics.Standarddeviation import Standarddeviation
 
 
 class SampleSize:
     @staticmethod
-    def unknown_pop_sample(data, seed, percent):
-        z_s = z_scores(data, seed)
-        m_e = MarginError.margin(data, seed)
+    def unknown_pop_sample(data, percent):
+        z_s = Zscore.zscore(data)
+        m_e = MarginError.margin(data)
         p = percent
-        q = subtraction(1, p)
+        q = 1 - p
 
-        val = division(z_s, m_e)
-        samplePop = squareRoot(val) * p * q
+        val = z_s / m_e
+        samplePop = val**(0.5) * p * q
 
         return samplePop
 
     @staticmethod
     def known_pop_sample(data, seed):
-        z_s = z_scores(data, seed)
-        m_e = MarginError.margin(data, seed)
-        s_d = standard_deviation(data)
+        z_s = Zscore.zscore(data)
+        m_e = MarginError.margin(data)
+        s_d = Standarddeviation.standarddeviation(data)
 
         value = (z_s * s_d) / m_e
 
-        popSample = squareRoot(value)
+        popSample = value**0.5
 
         return popSample
