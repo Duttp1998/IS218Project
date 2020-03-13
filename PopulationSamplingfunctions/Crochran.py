@@ -5,7 +5,7 @@ from Statistics.PopulationProportion import PopulationProportion
 
 
 
-class Cochran():
+class Cochran:
     @staticmethod
     def cochran(data, lstLen, seed):
         z_s = Zscore.zscore(data)

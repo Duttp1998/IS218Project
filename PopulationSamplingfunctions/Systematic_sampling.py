@@ -1,6 +1,6 @@
 from RandomNum.N_numbers_from_list_seed import PickNumbersSeed
 
-class SystemicSample():
+class SystemicSample:
     @staticmethod
     def systemicSample(aLst):
         lenLst = len(aLst)
@@ -8,7 +8,7 @@ class SystemicSample():
         nNum = round(num / 4)
 
         if nNum == 1:
-            n =3
+            n = 3
 
         sample = []
         temp = nNum - 1
