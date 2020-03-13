@@ -2,9 +2,9 @@ import math
 from Statistics.Standarddeviation import Standarddeviation
 from Statistics.Mean import Mean
 
-class Samplecorrelation():
+class PopulationCorrelation():
     @staticmethod
-    def correlationP(array):
+    def populationcorrelation(array):
         x = array[0]
         y = array[1]
         meanX = Mean.mean(x)
