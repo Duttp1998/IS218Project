@@ -6,6 +6,13 @@ from Statistics.Quartiles import Quartiles
 from Statistics.Skewness import Skewness
 from Statistics.Standarddeviation import Standarddeviation
 from Statistics.Variance import Variance
+from PopulationSamplingfunctions.Confidence_interval import ConfidenceInterval
+from PopulationSamplingfunctions.Crochran import Cochran
+from PopulationSamplingfunctions.Margin_error import MarginError
+from PopulationSamplingfunctions.Random_sampling import RandomSample
+from PopulationSamplingfunctions.Systematic_sampling import SystemicSample
+from PopulationSamplingfunctions.Sample_size import SampleSize
+
 
 class StatsCalculator:
     Result = 0
@@ -41,5 +48,34 @@ class StatsCalculator:
         self.Result = Variance.variance(a)
         return self.Result
 
+    def ConfidenceIntervalPopulation(self, a, b):
+        self.Result = ConfidenceInterval.confidenceIntervalPopulation(b, a)
+        return self.Result
 
+    def ConfidenceIntervalSample(self, a, b):
+        self.Result = ConfidenceInterval.confidenceIntervalSample(b, a)
+        return self.Result
 
+    def Cochran(self, a, b, c):
+        self.Result = Cochran.cochran(a, b, c)
+        return self.Result
+
+    def MarginError(self, a, b):
+        self.Result = MarginError.margin(a, b)
+        return self.Result
+
+    def RandomSampling(self, a, b, c):
+        self.Result = RandomSample.random_sample(b, a, c)
+        return self.Result
+
+    def SystematicSampling(self, a):
+        self.Result = SystemicSample.systemicSample(a)
+        return self.Result
+
+    def SampleSizeUnknown(self, a, b):
+        self.Result = SampleSize.unknown_pop_sample(a, 1, b)
+        return self.Result
+
+    def SampleSizeKnown(self, a, b):
+        self.Result = SampleSize.known_pop_sample(a, 1)
+        return self.Result
