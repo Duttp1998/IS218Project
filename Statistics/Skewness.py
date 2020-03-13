@@ -1,7 +1,7 @@
 from scipy.stats import skew
 
 
-class Skewness():
+class Skewness:
     @staticmethod
     def skewness(data):
         return skew(data)

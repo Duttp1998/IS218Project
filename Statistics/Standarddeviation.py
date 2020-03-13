@@ -1,6 +1,7 @@
 import statistics
 
-class Standarddeviation():
+
+class Standarddeviation:
     @staticmethod
     def standarddeviation(data):
         return statistics.stdev(data)
