@@ -5,7 +5,7 @@ from Calculator.Exponentiation import exponentiation
 from Calculator.Subtraction import subtraction
 
 
-class Cochran():
+class Cochran:
     @staticmethod
     def cochran(data, lstLen, seed):
         z_s = z_scores(data,seed)
