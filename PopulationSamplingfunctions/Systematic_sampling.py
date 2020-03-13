@@ -1,5 +1,5 @@
 from Calculator.Division import division
-from Calculator.Subtraction import subtraction
+from Basic.Subtraction import subtraction
 from RandomNum.N_numbers_from_list_seed import PickNumbersSeed
 
 class SystemicSample:

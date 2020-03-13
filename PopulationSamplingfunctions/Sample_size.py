@@ -1,6 +1,6 @@
 from Calculator.SquareRoot import squareRoot
 from Calculator.Division import division
-from Calculator.Subtraction import subtraction
+from Basic.Subtraction import subtraction
 from Statistics.Z_score import z_scores
 from PopulationSamplingfunctions.Margin_error import MarginError
 

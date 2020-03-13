@@ -2,7 +2,7 @@ from Statistics.Z_score import z_scores
 from PopulationSamplingfunctions.Margin_error import MarginError
 from Statistics.PopulationProportion import PopulationProportion
 from Calculator.Exponentiation import exponentiation
-from Calculator.Subtraction import subtraction
+from Basic.Subtraction import subtraction
 
 
 class Cochran:
