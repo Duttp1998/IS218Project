@@ -2,10 +2,9 @@ from scipy.stats import sem
 from scipy.stats import t
 from Statistics.Mean import mean
 
-class ConfidenceIntervalPopulation():
+class ConfidenceInterval:
     @staticmethod
-    def confidence_interval(confidence, data):
-
+    def confidenceIntervalPopulation(confidence, data):
         ld = len(data)
         mn = mean(data)
         std_er = sem(data)
@@ -15,3 +14,9 @@ class ConfidenceIntervalPopulation():
         end = mn + high
 
         return start, end
+
+    @staticmethod
+    def confidenceIntervalSample(confidence, data, seed, high):
+        data = RandomSample.random_sample(seed, data, high)
+        cip = ConfidenceIntervalPopulation.confidence_interval(confidence, data)
+        return cip
