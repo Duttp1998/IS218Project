@@ -4,7 +4,7 @@ from Statistics.Mean import mean
 
 class ConfidenceInterval:
     @staticmethod
-    def confidenceInterval(confidence, data):
+    def confidenceIntervalPopulation(confidence, data):
         ld = len(data)
         mn = mean(data)
         std_er = sem(data)
@@ -16,7 +16,7 @@ class ConfidenceInterval:
         return start, end
 
     @staticmethod
-    def confidenceInterval(confidence, data, seed, high):
+    def confidenceIntervalSample(confidence, data, seed, high):
         data = RandomSample.random_sample(seed, data, high)
         cip = ConfidenceIntervalPopulation.confidence_interval(confidence, data)
         return cip
