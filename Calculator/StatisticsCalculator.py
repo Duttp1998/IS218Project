@@ -72,7 +72,7 @@ class StatsCalculator:
         self.Result = RandomSample.random_sample(b, a, c)
         return self.Result
 
-    def SystematicSampling(self, a):
+    def SimpleRandomSampling(self, a):
         self.Result = SystemicSample.systemicSample(a)
         return self.Result
 
