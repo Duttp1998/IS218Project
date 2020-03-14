@@ -84,18 +84,18 @@ class StatsCalculator:
         self.Result = ConfidenceInterval.confidenceIntervalSample(b, a)
         return self.Result
 
-    def MarginError(self, a, b):
-        self.Result = MarginError.margin(a, b)
+    def MarginError(self, a):
+        self.Result = MarginError.margin(a)
         return self.Result
 
-    def Cochran(self, a, b, c):
-        self.Result = Cochran.cochran(a, b, c)
+    def Cochran(self, a):
+        self.Result = Cochran.cochran(a)
         return self.Result
 
     def SampleSizeUnknown(self, a, b):
-        self.Result = SampleSize.unknown_pop_sample(a, 1, b)
+        self.Result = SampleSize.unknown_pop_sample(a, b)
         return self.Result
 
-    def SampleSizeKnown(self, a, b):
-        self.Result = SampleSize.known_pop_sample(a, 1)
+    def SampleSizeKnown(self, a):
+        self.Result = SampleSize.known_pop_sample(a)
         return self.Result

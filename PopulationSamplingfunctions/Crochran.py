@@ -4,9 +4,9 @@ from Statistics.PopulationProportion import PopulationProportion
 
 class Cochran:
     @staticmethod
-    def cochran(data, lstLen, seed):
+    def cochran(data):
         z_s = Zscore.zscore(data)
-        p_p = PopulationProportion.proportion(data, lstLen, seed)
+        p_p = PopulationProportion.proportion(data)
         m_e = MarginError.margin(data)
         q = 1 - p_p
 

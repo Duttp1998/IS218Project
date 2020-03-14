@@ -9,20 +9,13 @@ from numpy.random import randint
 
 class MyTestCase(unittest.TestCase):
 
-    def __init__(self):
-        self.calculator = StatsCalculator()
-        self.seed = 1
-        self.IntegerList = Lists.prandINTL(1, 100, 100, self.seed)
-        self.FloatList = Lists.prandFLTL(1, 100, 100, self.seed)
-
-    def test_instantiate_calculator(self):
-        self.assertIsInstance(self.calculator, StatsCalculator)
-
-
     def setUp(self) -> None:
         seed(5)
         self.testData = randint(10, 20, 30)
         self.statistics = StatsCalculator()
+        self.seed = 1
+        self.IntegerList = Lists.prandINTL(1, 100, 100, self.seed)
+        self.FloatList = Lists.prandFLTL(1, 100, 100, self.seed)
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.statistics, StatsCalculator)
@@ -70,31 +63,31 @@ class MyTestCase(unittest.TestCase):
 
     def test_SimpleRandomSampling_calculator(self):
         results = self.statistics.SimpleRandomSampling(self.testData)
-        self.assertEqual(results,   )
+        self.assertEqual(results,  0 )
 
     def test_ConfidenceIntervalPopulation_calculator(self):
-        results = self.statistics.ConfidenceIntervalPopulation(self.testData, b)
-        self.assertEqual(results,   )
+        results = self.statistics.ConfidenceIntervalPopulation(0.9, self.testData)
+        self.assertEqual(results,  0 )
 
     def test_ConfidenceIntervalSample_calculator(self):
-        results = self.statistics.ConfidenceIntervalSample(self.testData, b)
-        self.assertEqual(results,   )
+        results = self.statistics.ConfidenceIntervalSample(0.9, self.testData)
+        self.assertEqual(results, 0  )
 
     def test_MarginError_calculator(self):
-        results = self.statistics.MarginError(self.testData, b)
-        self.assertEqual(results,   )
+        results = self.statistics.MarginError(self.testData)
+        self.assertEqual(results, 0  )
 
     def test_Cochran_calculator(self):
-        results = self.statistics.Cochran(self.testData, b, c)
-        self.assertEqual(results,   )
+        results = self.statistics.Cochran(self.testData)
+        self.assertEqual(results,  0 )
 
     def test_SampleSizeUnknown_calculator(self):
-        results = self.statistics.SampleSizeUnknown(self.testData, b)
-        self.assertEqual(results,   )
+        results = self.statistics.SampleSizeUnknown(self.testData, 0.9)
+        self.assertEqual(results, 0  )
 
     def test_SampleSizeKnown_calculator(self):
-        results = self.statistics.SampleSizeKnown(self.testData, b)
-        self.assertEqual(results,   )
+        results = self.statistics.SampleSizeKnown(self.testData)
+        self.assertEqual(results,  0 )
 
 if __name__ == '__main__':
     unittest.main()

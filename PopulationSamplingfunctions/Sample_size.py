@@ -17,7 +17,7 @@ class SampleSize:
         return samplePop
 
     @staticmethod
-    def known_pop_sample(data, seed):
+    def known_pop_sample(data):
         z_s = Zscore.zscore(data)
         m_e = MarginError.margin(data)
         s_d = Standarddeviation.standarddeviation(data)
