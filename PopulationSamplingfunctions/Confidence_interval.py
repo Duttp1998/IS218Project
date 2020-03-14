@@ -16,7 +16,7 @@ class ConfidenceInterval:
         return start, end
 
     @staticmethod
-    def confidenceIntervalSample(confidence, data, seed, high):
-        data = RandomSample.random_sample(seed, data, high)
+    def confidenceIntervalSample(confidence, data):
+        data = data
         cip = ConfidenceInterval.confidenceIntervalPopulation(confidence, data)
         return cip

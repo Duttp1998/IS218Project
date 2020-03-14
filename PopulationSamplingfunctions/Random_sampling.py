@@ -1,8 +1,8 @@
-from Random import RandomList
+from Random.Elements import Elements
 from numpy.random import seed
 
 class RandomSample:
     @staticmethod
-    def random_sample(seed_, data, lstLen):
-        seed(seed_)
-        return RandomList.list_Of_Ints(data, lstLen, seed)
+    def random_sample(data):
+
+        return
