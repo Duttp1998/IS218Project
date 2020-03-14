@@ -67,7 +67,7 @@ class MyTestCase(unittest.TestCase):
         print(results)
 
     def test_ConfidenceIntervalPopulation_calculator(self):
-        results = self.statistics.ConfidenceIntervalPopulation(self.testData, 0.9)
+        results = self.statistics.ConfidenceIntervalPopulation(0.9, self.testData)
         self.assertEqual(results,  results )
         print(results)
 
