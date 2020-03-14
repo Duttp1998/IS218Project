@@ -1,100 +1,74 @@
 import unittest
-from Calculator.StatisticsCalculator import StatsCalculator
-from Random.Elements import Elements
-from Random.Lists import Lists
-from Random.Numbers import Numbers
 from numpy.random import seed
 from numpy.random import randint
 
+from Statistics.Skewness import Skewness
+from Statistics.Median import Median
+from Statistics.Variance import Variance
+from Statistics.Standarddeviation import Standarddeviation
+from Statistics.Zscore import Zscore
+from Statistics.Meandeviation import Meandeviation
+from Statistics.Quartiles import Quartiles
+from Statistics.SampleCorrelation import Samplecorrelation
+from Statistics.PopulationCorrelation import PopulationCorrelation
+from Statistics.Statistics import Statistics
+from Statistics.Mode import Mode
+from Statistics.Mean import Mean
+
 
 class MyTestCase(unittest.TestCase):
-
     def setUp(self) -> None:
         seed(5)
-
-        self.statistics = StatsCalculator()
-        self.seed = 1
-        self.testData = Lists.prandINTL(1, 100, 100, self.seed)
+        self.testData = randint(10, 20, 30)
+        self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
-        self.assertIsInstance(self.statistics, StatsCalculator)
+        self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean_calculator(self):
-        mean = self.statistics.Mean(self.testData)
-        self.assertEqual(mean, 14)
+        mean = Mean.mean(self.testData)
+        self.assertEqual(mean, 54.47)
 
     def test_median_calculator(self):
-        median = self.statistics.Median(self.testData)
-        self.assertEqual(median, 14.5)
+        median = Median.median(self.testData)
+        self.assertEqual(median, 57.0 )
 
     def test_mode_calculator(self):
-        mode = self.statistics.Mode(self.testData)
-        self.assertEqual(mode, 10)
+        mode = Mode.mode(self.testData)
+        self.assertEqual(mode, 98)
 
     def test_variance_calculator(self):
-        variance = self.statistics.Variance(self.testData)
-        self.assertEqual(variance, 11)
+        variance = Variance.variance(self.testData)
+        self.assertEqual(variance, 884.1708080808081)
 
     def test_skewness_calculator(self):
-        skew = self.statistics.Skewness(self.testData)
-        self.assertEqual(skew, 0.03576490724804414)
+        skew = Skewness.skewness(self.testData)
+        self.assertEqual(skew, -0.21197867987065927)
 
     def test_standarddeviation_calculator(self):
-        standard = self.statistics.Standarddeviation(self.testData)
-        self.assertEqual(standard, 3.3166247903554)
+        standard = Standarddeviation.standarddeviation(self.testData)
+        self.assertEqual(standard, 29.735009804619338)
 
     def test_quartiles_calculator(self):
-        quart = self.statistics.Quartiles(self.testData)
+        quart = Quartiles.quartiles(self.testData)
         self.assertEqual(quart, (11.0, 14.5, 17.0))
 
     def test_zscore_calculator(self):
-        zscore = self.statistics.ZScore(self.testData)
-        self.assertEqual(zscore[0], -1.276398025379199)
+        zscore = Zscore.zscore(self.testData)
+        self.assertEqual(zscore, -1.2326792344561226)
 
     def test_meandeviation_calculator(self):
-        meand = self.statistics.MeanAbsoluteDeviation(self.testData)
-        self.assertEqual(meand, 3.033333333333333)
+        meand = Meandeviation.meandeviation(self.testData)
+        self.assertEqual(meand, 25.09240000000001)
 
+    def test_samplecorrelation_calculator(self):
+        samplec = Samplecorrelation.samplecorrelation(self.testData)
+        self.assertEqual(samplec, 3.3166247903554)
 
     def test_populationcorrelation_calculator(self):
-        popc = self.statistics.PopulationCorrelation(self.testData)
+        popc = PopulationCorrelation.populationcorrelation(self.testData)
         self.assertEqual(popc, 3.3166247903554)
-        print(results)
 
-    def test_SimpleRandomSampling_calculator(self):
-        results = self.statistics.SimpleRandomSampling(self.testData)
-        self.assertEqual(results,  results )
-        print(results)
-
-    def test_ConfidenceIntervalPopulation_calculator(self):
-        results = self.statistics.ConfidenceIntervalPopulation(0.9, self.testData)
-        self.assertEqual(results,  results )
-        print(results)
-
-    def test_ConfidenceIntervalSample_calculator(self):
-        results = self.statistics.ConfidenceIntervalSample(0.9, self.testData)
-        self.assertEqual(results, results  )
-        print(results)
-
-    def test_MarginError_calculator(self):
-        results = self.statistics.MarginError(self.testData)
-        self.assertEqual(results, results  )
-        print(results)
-
-    def test_Cochran_calculator(self):
-        results = self.statistics.Cochran(self.testData)
-        self.assertEqual(results,  results )
-        print(results)
-
-    def test_SampleSizeUnknown_calculator(self):
-        results = self.statistics.SampleSizeUnknown(self.testData, 0.9)
-        self.assertEqual(results, results )
-        print(results)
-
-    def test_SampleSizeKnown_calculator(self):
-        results = self.statistics.SampleSizeKnown(self.testData)
-        self.assertEqual(results,  results)
-        print(results)
 
 if __name__ == '__main__':
     unittest.main()
