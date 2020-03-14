@@ -1,5 +1,3 @@
-from Calculator.Division import division
-from Basic.Subtraction import subtraction
 from RandomNum.N_numbers_from_list_seed import PickNumbersSeed
 
 class SystemicSample:
@@ -7,15 +5,15 @@ class SystemicSample:
     def systemicSample(aLst):
         lenLst = len(aLst)
         num = (PickNumbersSeed.pickNumbers(lenLst, lenLst, 2))
-        nNum = round(division(num, 4))
+        nNum = round(num / 4)
 
         if nNum == 1:
             n = 3
 
         sample = []
-        temp = subtraction(nNum, 1)
+        temp = nNum - 1
 
-        while temp <= subtraction(lenLst, 1):
+        while temp <= lenLst - 1:
             val = aLst[temp]
             sample.append(val)
             temp += nNum
