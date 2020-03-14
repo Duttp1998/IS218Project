@@ -11,11 +11,10 @@ class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         seed(5)
-        self.testData = Lists.prandINTL(1, 100, 100, self.seed)
+
         self.statistics = StatsCalculator()
         self.seed = 1
-        self.IntegerList = Lists.prandINTL(1, 100, 100, self.seed)
-        self.FloatList = Lists.prandFLTL(1, 100, 100, self.seed)
+        self.testData = Lists.prandINTL(1, 100, 100, self.seed)
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.statistics, StatsCalculator)
