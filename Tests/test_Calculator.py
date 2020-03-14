@@ -56,7 +56,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_zscore_calculator(self):
         zscore = Zscore.zscore(self.testData)
-        self.assertEqual(zscore, -1.2326792344561226)
+        self.assertEqual(zscore[0], -1.2326792344561226)
 
     def test_meandeviation_calculator(self):
         meand = Meandeviation.meandeviation(self.testData)
