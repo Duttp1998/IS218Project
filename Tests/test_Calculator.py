@@ -49,7 +49,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_zscore_calculator(self):
         zscore = self.statistics.ZScore(self.testData)
-        self.assertEqual(zscore, -1.276398025379199)
+        self.assertEqual(zscore[0], -1.276398025379199)
 
     def test_meandeviation_calculator(self):
         meand = self.statistics.MeanAbsoluteDeviation(self.testData)
