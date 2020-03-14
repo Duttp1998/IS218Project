@@ -1,11 +1,8 @@
-from Random.Numbers import Numbers
-
+from Random import RandomList
+from numpy.random import seed
 
 class RandomSample:
     @staticmethod
-    def simpleSample(array, n):
-        result = []
-        while n >= 0:
-            result.append(array.pop(Numbers.randINT(0, len(array) - 1)))
-            n -= 1
-        return result
+    def random_sample(seed_, data, lstLen):
+        seed(seed_)
+        return RandomList.list_Of_Ints(data, lstLen, seed)

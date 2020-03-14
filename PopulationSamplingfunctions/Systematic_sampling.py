@@ -1,11 +1,21 @@
+from RandomNum.N_numbers_from_list_seed import PickNumbersSeed
+
 class SystemicSample:
     @staticmethod
-    def systematicSample(array, n):
-        result = []
-        while n > 0:
-            index = len(array) // n
-            if index >= len(array):
-                index -= 1
-            result.append(array.pop(index))
-            n -= 1
-        return result
+    def systemicSample(aLst):
+        lenLst = len(aLst)
+        num = (PickNumbersSeed.pickNumbers(lenLst, lenLst, 2))
+        nNum = round(num / 4)
+
+        if nNum == 1:
+            n = 3
+
+        sample = []
+        temp = nNum - 1
+
+        while temp <= lenLst - 1:
+            val = aLst[temp]
+            sample.append(val)
+            temp += nNum
+
+        return sample
