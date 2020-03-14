@@ -68,7 +68,7 @@ class MyTestCase(unittest.TestCase):
         print(results)
 
     def test_ConfidenceIntervalPopulation_calculator(self):
-        results = self.statistics.ConfidenceIntervalPopulation(0.9, self.testData)
+        results = self.statistics.ConfidenceIntervalPopulation(self.testData, 0.9)
         self.assertEqual(results,  results )
         print(results)
 
@@ -91,7 +91,7 @@ class MyTestCase(unittest.TestCase):
         results = self.statistics.SampleSizeUnknown(self.testData, 0.9)
         self.assertEqual(results, results )
         print(results)
-        
+
     def test_SampleSizeKnown_calculator(self):
         results = self.statistics.SampleSizeKnown(self.testData)
         self.assertEqual(results,  results)
