@@ -65,12 +65,12 @@ class MyTestCase(unittest.TestCase):
     def test_samplecorrelation_calculator(self):
         newData = [self.testData, self.testDataTwo]
         samplec = Samplecorrelation.samplecorrelation(newData)
-        self.assertEqual(samplec, 3.3166247903554)
+        self.assertEqual(samplec, 0.36163489596525095)
 
     def test_populationcorrelation_calculator(self):
         newData = [self.testData, self.testDataTwo]
         popc = PopulationCorrelation.populationcorrelation(newData)
-        self.assertEqual(popc, 3.3166247903554)
+        self.assertEqual(popc, 0.24767431950561303)
 
 
 if __name__ == '__main__':
