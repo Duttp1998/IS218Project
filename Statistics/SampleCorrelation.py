@@ -15,6 +15,6 @@ class Samplecorrelation():
             ydiff = y[index]- meanY
             numerator += xdiff* ydiff
         covariance = numerator/ len(x)
-        stdX = Standarddeviation.standardDeviation(x)
-        stdY = Standarddeviation.standardDeviation(y)
+        stdX = Standarddeviation.standarddeviation(x)
+        stdY = Standarddeviation.standarddeviation(y)
         return covariance/(stdX*stdY)
