@@ -3,6 +3,8 @@ from Calculator.StatisticsCalculator import StatsCalculator
 from Random.Elements import Elements
 from Random.Lists import Lists
 from Random.Numbers import Numbers
+from numpy.random import seed
+from numpy.random import randint
 
 
 class MyTestCase(unittest.TestCase):
@@ -17,5 +19,53 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.calculator, StatsCalculator)
 
 
+    def setUp(self) -> None:
+        seed(5)
+        self.testData = randint(10, 20, 30)
+        self.statistics = StatsCalculator()
+
+    def test_instantiate_calculator(self):
+        self.assertIsInstance(self.statistics, StatsCalculator)
+
+    def test_mean_calculator(self):
+        mean = StatsCalculator.Mean(self.testData)
+        self.assertEqual(mean, 14)
+
+    def test_median_calculator(self):
+        median = StatsCalculator.Median(self.testData)
+        self.assertEqual(median, 14.5)
+
+    def test_mode_calculator(self):
+        mode = StatsCalculator.Mode(self.testData)
+        self.assertEqual(mode, 10)
+
+    def test_variance_calculator(self):
+        variance = StatsCalculator.Variance(self.testData)
+        self.assertEqual(variance, 11)
+
+    def test_skewness_calculator(self):
+        skew = StatsCalculator.Skewness(self.testData)
+        self.assertEqual(skew, 0.03576490724804414)
+
+    def test_standarddeviation_calculator(self):
+        standard = StatsCalculator.Standarddeviation(self.testData)
+        self.assertEqual(standard, 3.3166247903554)
+
+    def test_quartiles_calculator(self):
+        quart = StatsCalculator.Quartiles(self.testData)
+        self.assertEqual(quart, (11.0, 14.5, 17.0))
+
+    def test_zscore_calculator(self):
+        zscore = StatsCalculator.ZScore(self.testData)
+        self.assertEqual(zscore, -1.276398025379199)
+
+    def test_meandeviation_calculator(self):
+        meand = StatsCalculator.MeanAbsoluteDeviation(self.testData)
+        self.assertEqual(meand, 3.033333333333333)
+
+
+    def test_populationcorrelation_calculator(self):
+        popc = StatsCalculator.PopulationCorrelation(self.testData)
+        self.assertEqual(popc, 3.3166247903554)
 if __name__ == '__main__':
     unittest.main()
