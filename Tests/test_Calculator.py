@@ -20,6 +20,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
         self.testData = randint(10, 20, 30)
+        self.testDataTwo = randint(10, 20, 30)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -62,11 +63,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(meand, 3.033333333333333)
 
     def test_samplecorrelation_calculator(self):
-        samplec = Samplecorrelation.samplecorrelation(self.testData)
+        newData = [self.testData, self.testDataTwo]
+        samplec = Samplecorrelation.samplecorrelation(newData)
         self.assertEqual(samplec, 3.3166247903554)
 
     def test_populationcorrelation_calculator(self):
-        popc = PopulationCorrelation.populationcorrelation(self.testData)
+        newData = [self.testData, self.testDataTwo]
+        popc = PopulationCorrelation.populationcorrelation(newData)
         self.assertEqual(popc, 3.3166247903554)
 
 
