@@ -6,6 +6,10 @@ from Statistics.Quartiles import Quartiles
 from Statistics.Skewness import Skewness
 from Statistics.Standarddeviation import Standarddeviation
 from Statistics.Variance import Variance
+from Statistics.PopulationCorrelation import PopulationCorrelation
+from Statistics.SampleCorrelation import Samplecorrelation
+from Statistics.Zscore import Zscore
+from Statistics.Meandeviation import Meandeviation
 from PopulationSamplingfunctions.Confidence_interval import ConfidenceInterval
 from PopulationSamplingfunctions.Crochran import Cochran
 from PopulationSamplingfunctions.Margin_error import MarginError
@@ -32,6 +36,14 @@ class StatsCalculator:
         self.Result = Mode.mode(a)
         return self.Result
 
+    def Variance(self, a):
+        self.Result = Variance.variance(a)
+        return self.Result
+
+    def Standarddeviation(self, a):
+        self.Result = Standarddeviation.standarddeviation(a)
+        return self.Result
+
     def Quartiles(self, a):
         self.Result = Quartiles.quartiles(a)
         return self.Result
@@ -40,12 +52,28 @@ class StatsCalculator:
         self.Result = Skewness.skewness(a)
         return self.Result
 
-    def Standarddeviation(self, a):
-        self.Result = Standarddeviation.standarddeviation(a)
+    def SampleCorrelation(self, a):
+        self.Result = SampleCorrelation.samplecorrelation(a)
         return self.Result
 
-    def Variance(self, a):
-        self.Result = Variance.variance(a)
+    def PopulationCorrelation(self, a):
+        self.Result = PopulationCorrelation.populationcorrelation(a)
+        return self.Result
+
+    def ZScore(self, a):
+        self.Result = Zscore.zscore(a)
+        return self.Result
+
+    def MeanAbsoluteDeviation(self, a):
+        self.Result = Meandeviation.meandeviation(a)
+        return self.Result
+
+    def SimpleRandomSampling(self, a, b, c):
+        self.Result = RandomSample.random_sample(b, a, c)
+        return self.Result
+
+    def SystematicSampling(self, a):
+        self.Result = SystemicSample.systemicSample(a)
         return self.Result
 
     def ConfidenceIntervalPopulation(self, a, b):
@@ -56,20 +84,12 @@ class StatsCalculator:
         self.Result = ConfidenceInterval.confidenceIntervalSample(b, a)
         return self.Result
 
-    def Cochran(self, a, b, c):
-        self.Result = Cochran.cochran(a, b, c)
-        return self.Result
-
     def MarginError(self, a, b):
         self.Result = MarginError.margin(a, b)
         return self.Result
 
-    def RandomSampling(self, a, b, c):
-        self.Result = RandomSample.random_sample(b, a, c)
-        return self.Result
-
-    def SystematicSampling(self, a):
-        self.Result = SystemicSample.systemicSample(a)
+    def Cochran(self, a, b, c):
+        self.Result = Cochran.cochran(a, b, c)
         return self.Result
 
     def SampleSizeUnknown(self, a, b):

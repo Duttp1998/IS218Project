@@ -1,4 +1,8 @@
 import unittest
+from Calculator.StatisticsCalculator import StatsCalculator
+from Random.Elements import Elements
+from Random.Lists import Lists
+from Random.Numbers import Numbers
 
 
 class MyTestCase(unittest.TestCase):

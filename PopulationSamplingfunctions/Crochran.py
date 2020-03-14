@@ -2,9 +2,6 @@ from Statistics.Zscore import Zscore
 from PopulationSamplingfunctions.Margin_error import MarginError
 from Statistics.PopulationProportion import PopulationProportion
 
-
-
-
 class Cochran:
     @staticmethod
     def cochran(data, lstLen, seed):
