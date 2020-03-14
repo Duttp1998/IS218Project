@@ -1,4 +1,4 @@
-from RandomNum.random_list import RandomList
+
 
 class PopulationProportion:
     @staticmethod
