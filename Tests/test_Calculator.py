@@ -60,5 +60,34 @@ class MyTestCase(unittest.TestCase):
     def test_populationcorrelation_calculator(self):
         popc = self.statistics.PopulationCorrelation(self.testData)
         self.assertEqual(popc, 3.3166247903554)
+
+    def test_SimpleRandomSampling_calculator(self):
+        results = self.statistics.SimpleRandomSampling(self.testData)
+        self.assertEqual(results,   )
+
+    def test_ConfidenceIntervalPopulation_calculator(self):
+        results = self.statistics.ConfidenceIntervalPopulation(self.testData, b)
+        self.assertEqual(results,   )
+
+    def test_ConfidenceIntervalSample_calculator(self):
+        results = self.statistics.ConfidenceIntervalSample(self.testData, b)
+        self.assertEqual(results,   )
+
+    def test_MarginError_calculator(self):
+        results = self.statistics.MarginError(self.testData, b)
+        self.assertEqual(results,   )
+
+    def test_Cochran_calculator(self):
+        results = self.statistics.Cochran(self.testData, b, c)
+        self.assertEqual(results,   )
+
+    def test_SampleSizeUnknown_calculator(self):
+        results = self.statistics.SampleSizeUnknown(self.testData, b)
+        self.assertEqual(results,   )
+
+    def test_SampleSizeKnown_calculator(self):
+        results = self.statistics.SampleSizeKnown(self.testData, b)
+        self.assertEqual(results,   )
+
 if __name__ == '__main__':
     unittest.main()
