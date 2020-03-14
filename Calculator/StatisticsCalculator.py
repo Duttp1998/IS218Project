@@ -69,11 +69,11 @@ class StatsCalculator:
         return self.Result
 
     def SimpleRandomSampling(self, a, b, c):
-        self.Result = RandomSample.random_sample(b, a, c)
+        self.Result = RandomSample.simpleSample(b, a)
         return self.Result
 
-    def SimpleRandomSampling(self, a):
-        self.Result = SystemicSample.systemicSample(a)
+    def SystemicSampling(self, a):
+        self.Result = SystemicSample.systematicSample(a, 5)
         return self.Result
 
     def ConfidenceIntervalPopulation(self, a, b):
